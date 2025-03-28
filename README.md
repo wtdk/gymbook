@@ -1,66 +1,133 @@
-# Taito City Sports Facility Booking Script
+# Taito City Sports Facility Booking Scripts
 
-This Python script automates the process of booking sports facilities (specifically the arena) at Taito City Sports Plaza (台東スポーツプラザ) through their online reservation system.
+This repository contains two Python scripts for automating court bookings at Taito City Sports Plaza (台東スポーツプラザ). Both scripts use Selenium WebDriver to automate the booking process, but they're designed for different booking scenarios.
 
-## Features
+## Scripts Overview
 
-- Automated login using credentials from a config file
-- Selects specific dates (weekends and holidays)
-- Books available time slots (b1: 13:00-17:00 and b2: 18:00-21:00)
-- Handles Japanese error messages and alerts
-- Random delays to simulate human-like behavior
+### 1. `main.py` - Weekday Evening Court Booking
+- Designed for booking evening time slots (b2: 18:00-21:00)
+- Books up to 10 available dates
+- Uses `config.txt` for configuration
+- Simpler date selection (no specific day filtering)
 
-```
-selenium
-webdriver-manager
-configparser
-```
+### 2. `weekend.py` - Weekend Court Booking
+- Designed specifically for weekend and holiday bookings
+- Books both afternoon (b1: 13:00-17:00) and evening (b2: 18:00-21:00) slots
+- Uses `weekend_config.txt` for configuration
+- Includes weekend/holiday date filtering
+- Enhanced error handling for Japanese alert messages
+
+## Prerequisites
+
+- Python 3.x
+- Chrome browser installed
+- Required Python packages:
+  ```
+  selenium
+  webdriver-manager
+  ```
 
 ## Configuration
 
-Create a `weekend_config.txt` file in the same directory with the following format:
-
+### For `main.py`:
+Create a `config.txt` file with:
 ```
 user_id=your_user_id
 password=your_password
 date=YYYY-MM-DD
 ```
 
-Example:
+### For `weekend.py`:
+Create a `weekend_config.txt` file with:
 ```
-user_id=123456
+user_id=your_user_id
 password=your_password
-date=2024-03-01
+date=YYYY-MM-DD
 ```
 
 ## Time Slots
 
-The script looks for the following time slots:
+The scripts handle different time slots:
+- b0: 9:00-12:00 (Morning)
 - b1: 13:00-17:00 (Afternoon)
 - b2: 18:00-21:00 (Evening)
 
-## Notes
+## Usage
 
-- The script includes random delays between actions to simulate human-like behavior
-- It will attempt to book up to 10 available dates
-- The browser window will remain open until you press Enter
-- The script handles various Japanese error messages and alerts automatically
-- Make sure your credentials in `weekend_config.txt` are correct
+1. Clone the repository
+2. Install required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Create the appropriate config file based on which script you want to use
+4. Run the desired script:
+   ```bash
+   # For evening bookings
+   python main.py
+   
+   # For weekend bookings
+   python weekend.py
+   ```
+
+## Common Features
+
+Both scripts share these features:
+- Automated login
+- Random delays to simulate human behavior
+- Chrome browser automation
+- Error handling
+- Browser window remains open for manual inspection
+- Automatic basketball purpose selection
+- 15-person group size setting
+
+## Differences
+
+### `main.py`
+- Focused on evening slots only (b2)
+- Books up to 10 dates
+- No specific day filtering
+- Simpler configuration
+
+### `weekend.py`
+- Handles both afternoon (b1) and evening (b2) slots
+- Specifically filters for weekends and holidays
+- Enhanced alert handling for Japanese error messages
+- Separate configuration file
 
 ## Error Handling
 
-The script includes error handling for:
+Both scripts include error handling for:
 - Login failures
-- Missing configuration file
-- Invalid date format
-- Japanese error messages and alerts
+- Missing configuration files
+- Invalid date formats
 - Network issues
 - Element not found errors
 
+`weekend.py` additionally handles:
+- Japanese alert messages
+- Weekend/holiday specific errors
+- Multiple time slot selection errors
+
+## Notes
+
+- The scripts include random delays between actions to simulate human-like behavior
+- Browser windows remain open until you press Enter
+- Make sure your credentials in the config files are correct
+- The scripts are designed to work with the Taito City Sports Plaza website
+
 ## Disclaimer
 
-This script is for educational purposes only. Please ensure you comply with Taito City's terms of service and booking policies when using this script.
+These scripts are for educational purposes only. Please ensure you comply with Taito City's terms of service and booking policies when using these scripts.
+
+## License
+
+[Your chosen license]
 
 ## Contributing
 
 Feel free to submit issues and enhancement requests!
+```
+
+Would you like me to also create a `requirements.txt` file for the project? This would make it easier for others to install the necessary dependencies.
+
+Also, would you like me to add any specific license information or additional sections to the README?
