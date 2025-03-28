@@ -8,8 +8,6 @@ This Python script automates the process of booking sports facilities (specifica
 - Selects specific dates (weekends and holidays)
 - Books available time slots (b1: 13:00-17:00 and b2: 18:00-21:00)
 - Handles Japanese error messages and alerts
-- Configurable number of people (default: 15)
-- Automated basketball purpose selection
 - Random delays to simulate human-like behavior
 
 ```
