@@ -1,4 +1,3 @@
-# gymbook
 # Taito City Sports Facility Booking Script
 
 This Python script automates the process of booking sports facilities (specifically the arena) at Taito City Sports Plaza (台東スポーツプラザ) through their online reservation system.
