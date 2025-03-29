@@ -1,7 +1,9 @@
-import assistant
 import argparse
 import sys
+
 from datetime import datetime
+
+import assistant
 
 # enter dates as command line arguments or through an api call maybe a frontend
 # send email of details
