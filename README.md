@@ -4,16 +4,14 @@ This repository contains two Python scripts for automating court bookings at Tai
 
 ## Scripts Overview
 
-### 1. `main.py` - Weekday Evening Court Booking
+### 1. Weekday Evening Court Booking
 - Designed for booking evening time slots (b2: 18:00-21:00)
 - Books up to 10 available dates
-- Uses `config.txt` for configuration
 - Simpler date selection (no specific day filtering)
 
-### 2. `weekend.py` - Weekend Court Booking
+### 2. Weekend Court Booking
 - Designed specifically for weekend and holiday bookings
 - Books both afternoon (b1: 13:00-17:00) and evening (b2: 18:00-21:00) slots
-- Uses `weekend_config.txt` for configuration
 - Includes weekend/holiday date filtering
 - Enhanced error handling for Japanese alert messages
 
@@ -27,24 +25,6 @@ This repository contains two Python scripts for automating court bookings at Tai
   webdriver-manager
   ```
 
-## Configuration
-
-### For `main.py`:
-Create a `config.txt` file with:
-```
-user_id=your_user_id
-password=your_password
-date=YYYY-MM-DD
-```
-
-### For `weekend.py`:
-Create a `weekend_config.txt` file with:
-```
-user_id=your_user_id
-password=your_password
-date=YYYY-MM-DD
-```
-
 ## Time Slots
 
 The scripts handle different time slots:
@@ -54,20 +34,10 @@ The scripts handle different time slots:
 
 ## Usage
 
-1. Clone the repository
-2. Install required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Create the appropriate config file based on which script you want to use
-4. Run the desired script:
-   ```bash
-   # For evening bookings
-   python main.py
-   
-   # For weekend bookings
-   python weekend.py
-   ```
+Usage example:
+```bash
+python main.py --user=myuser --password=mypass --mode=normal --date=2024-01-01 --headless
+```
 
 ## Common Features
 
@@ -82,13 +52,13 @@ Both scripts share these features:
 
 ## Differences
 
-### `main.py`
+### `normal` mode
 - Focused on evening slots only (b2)
 - Books up to 10 dates
 - No specific day filtering
 - Simpler configuration
 
-### `weekend.py`
+### `weekend` mode
 - Handles both afternoon (b1) and evening (b2) slots
 - Specifically filters for weekends and holidays
 - Enhanced alert handling for Japanese error messages
@@ -102,11 +72,6 @@ Both scripts include error handling for:
 - Invalid date formats
 - Network issues
 - Element not found errors
-
-`weekend.py` additionally handles:
-- Japanese alert messages
-- Weekend/holiday specific errors
-- Multiple time slot selection errors
 
 ## Notes
 
