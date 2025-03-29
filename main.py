@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import os
@@ -10,6 +11,14 @@ import random
 import configparser
 from datetime import datetime
 
+# enter dates as command line arguments or through an api call maybe a frontend
+# send email of details
+# put service on server
+# view reservations
+# save accounts to a db
+# save reservation to a db
+# make multiple attempts or do batch requests
+# bonus cancel reservation
 def random_delay():
     """Generate a random delay between 0.1 and 0.15 seconds"""
     return random.uniform(0.1, 0.15)
@@ -19,38 +28,38 @@ def login(driver, user_id, password):
     try:
         # Navigate to the main page first
         driver.get("https://shisetsu.city.taito.lg.jp/")
-        
+
         # Wait for and click the login button
         wait = WebDriverWait(driver, 20)
         login_button = wait.until(EC.element_to_be_clickable((By.ID, "rbtnLogin")))
         time.sleep(random_delay())
         login_button.click()
-        
+
         # Verify we're on the login page
         wait.until(lambda driver: "Wg_Login.aspx" in driver.current_url)
         wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
         print("On login page:", driver.current_url)
-        
+
         # Now wait for login form elements and input credentials
         id_field = wait.until(EC.presence_of_element_located((By.ID, "txtID")))
         password_field = driver.find_element(By.ID, "txtPass")
-        
+
         # Input credentials with small delays
         time.sleep(random_delay())
         id_field.send_keys(user_id)
         time.sleep(random_delay())
         password_field.send_keys(password)
         time.sleep(random_delay())
-        
+
         # Click the login submit button
         submit_button = driver.find_element(By.ID, "ucPCFooter_btnForward")
         submit_button.click()
-        
+
         # Wait for redirect to mode select page
         wait.until(lambda driver: "Wg_ModeSelect.aspx" in driver.current_url)
         wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
         print("Successfully reached mode select page:", driver.current_url)
-        
+
     except Exception as e:
         print(f"Login failed: {str(e)}")
         raise
@@ -62,107 +71,130 @@ def load_credentials():
         # Check if config file exists
         if not os.path.exists('config.txt'):
             raise FileNotFoundError("config.txt file not found")
-            
+
         with open('config.txt', 'r') as f:
             # Add a section header to make it compatible with configparser
             config_string = '[Credentials]\n' + f.read()
         config.read_string(config_string)
-        
+
         user_id = config['Credentials']['user_id']
         password = config['Credentials']['password']
         date_str = config['Credentials']['date']  # Expected format: YYYY-MM-DD
-        
+
         # Parse the date
         try:
             date = datetime.strptime(date_str, '%Y-%m-%d')
         except ValueError:
             raise ValueError("Date in config.txt must be in YYYY-MM-DD format")
-            
+
         return user_id, password, date
     except Exception as e:
         print(f"Error loading credentials: {str(e)}")
         raise
 
 def main():
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-    
+    mode = "normal" # or weekend
+
+    slots = ["b1"] # (b1: 13:00-17:00) and evening (b2: 18:00-21:00) slots
+    if mode == "weekend":
+        slots.append("b2")
+
+    # comment out the chrome options stuff if you want to run in norma mode
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")  # Enable headless mode
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+
     try:
         user_id, password, date = load_credentials()
         login(driver, user_id, password)
         wait = WebDriverWait(driver, 20)
-        
+
         # Verify we're on mode select page
         if "Wg_ModeSelect.aspx" not in driver.current_url:
             print("Not on mode select page. Current URL:", driver.current_url)
             raise Exception("Navigation error: Not on mode select page")
-        
+
         # Wait for page load and click sports facilities
         wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
         time.sleep(random_delay())
-        
+
         sports_button = wait.until(EC.element_to_be_clickable(
             (By.ID, "dlSSCategory_ctl02_btnSSCategory")))
         time.sleep(random_delay())
         sports_button.click()
-        
+
         # Wait and verify we're on facilities list page
         wait.until(lambda driver: "Wg_ShisetsuIchiran.aspx" in driver.current_url)
         wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
         print("On facilities list page:", driver.current_url)
         time.sleep(random_delay())
-        
+
         # Click Tanaka Sports Plaza
         tanaka_plaza = wait.until(EC.element_to_be_clickable(
             (By.ID, "dgShisetsuList_ctl06_chkSelectLeft")))
         time.sleep(random_delay())
         tanaka_plaza.click()
-        
+
         # Verify we're still on the same page before clicking next
         if "Wg_ShisetsuIchiran.aspx" not in driver.current_url:
             raise Exception("Unexpected page after selecting facility")
-        
+
         wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
         time.sleep(random_delay())
-        
+
         # Click the Next button
         next_button = wait.until(EC.element_to_be_clickable(
             (By.ID, "ucPCFooter_btnForward")))
         time.sleep(random_delay())
         next_button.click()
-        
+
         # Wait for next page to load and verify we're on date selection page
         wait.until(lambda driver: "Wg_NichijiSentaku.aspx" in driver.current_url)
         wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
         print("On date selection page:", driver.current_url)
         time.sleep(random_delay())
-        
+
         # Input year
         year_field = wait.until(EC.presence_of_element_located((By.ID, "txtYear")))
         year_field.clear()
         year_field.send_keys(str(date.year))
         time.sleep(random_delay())
-        
+
         # Input month
         month_field = driver.find_element(By.ID, "txtMonth")
         month_field.clear()
         month_field.send_keys(str(date.month))
         time.sleep(random_delay())
-        
+
         # Input day
         day_field = driver.find_element(By.ID, "txtDay")
         day_field.clear()
         day_field.send_keys(str(date.day))
         time.sleep(random_delay())
-        
+
         # Click 1ヶ月 button
         month_button = wait.until(EC.element_to_be_clickable((By.ID, "rbtnMonth")))
         month_button.click()
         time.sleep(random_delay())
-        
-        # Click next button
-        next_button = wait.until(EC.element_to_be_clickable((By.ID, "ucPCFooter_btnForward")))
-        next_button.click()
-        
+
+        month_button = wait.until(EC.element_to_be_clickable((By.ID, "chkSat")))
+        month_button.click()
+        time.sleep(random_delay())
+
+        if mode == "weekend":
+            month_button = wait.until(EC.element_to_be_clickable((By.ID, "chkSun")))
+            month_button.click()
+            time.sleep(random_delay())
+
+            month_button = wait.until(EC.element_to_be_clickable((By.ID, "chkHol")))
+            month_button.click()
+
+            # Click next button
+            next_button = wait.until(EC.element_to_be_clickable((By.ID, "ucPCFooter_btnForward")))
+            next_button.click()
+
         # Wait for next page to load
         wait.until(lambda driver: "Wg_ShisetsubetsuAkiJoukyou.aspx" in driver.current_url)
         wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
@@ -171,10 +203,10 @@ def main():
 
         # Find specifically the arena dates with ctl02 in their IDs
         available_dates = driver.find_elements(
-            By.XPATH, 
+            By.XPATH,
             "//a[contains(@id, 'dlRepeat_ctl00_tpItem_dgTable_ctl02') and contains(text(), '△')]"
         )
-        
+
         if not available_dates:
             print("No available dates found in arena row")
         else:
@@ -182,7 +214,7 @@ def main():
             # Click 3 available dates
             dates_to_click = available_dates[:10]  # Changed from 5 to 3
             print(f"Will click first {len(dates_to_click)} dates")
-            
+
             for date in dates_to_click:
                 try:
                     if date.is_displayed() and date.is_enabled():
@@ -205,17 +237,20 @@ def main():
         print("On timeslot selection page:", driver.current_url)
         time.sleep(random_delay())
 
-        # Find all available b2 (3rd slot) timeslots marked with ○
+        formatted_slots = []
+        for s in slots:
+            slot = "contains(@id, '_tpItem_dgTable_ctl02_{}')".format(s)
+            formatted_slots.append(slot)
+
+        available_slots_search_str = ' or '.join(formatted_slots)
         available_slots = driver.find_elements(
-            By.XPATH,
-            "//a[contains(@id, '_tpItem_dgTable_ctl02_b2') and contains(text(), '○')]"
+            By.XPATH, f"//a[({available_slots_search_str}) and contains(text(), '○')]"
         )
 
+        print(available_slots)
         if not available_slots:
-            print("No available b2 timeslots found")
-        else:
-            print(f"Found {len(available_slots)} available b2 timeslots")
-            
+            print(f"Found {len(available_slots)} available {' or '.join(slots)} timeslots")
+
             for slot in available_slots:
                 try:
                     if slot.is_displayed() and slot.is_enabled():
@@ -224,6 +259,17 @@ def main():
                         slot.click()
                         time.sleep(random_delay())
                         wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
+
+                        # Handle potential alert
+                        if mode == "weekend":
+                            try:
+                                alert = driver.switch_to.alert
+                                alert_text = alert.text
+                                print(f"Alert detected: {alert_text}")
+                                alert.accept()  # Click OK
+                                time.sleep(random_delay())
+                            except:
+                                pass  # No alert present, continue normally
                 except Exception as e:
                     print(f"Failed to click timeslot: {e}")
 
@@ -260,12 +306,13 @@ def main():
             (By.ID, "orbCopyYes")))
         yes_button.click()
         time.sleep(random_delay())
-
+        driver.quit()
+        return
         # Click confirm button (確定)
-        confirm_button = wait.until(EC.element_to_be_clickable(
-            (By.ID, "ucPCFooter_btnForward")))
-        time.sleep(random_delay())
-        confirm_button.click()
+        # confirm_button = wait.until(EC.element_to_be_clickable(
+        #     (By.ID, "ucPCFooter_btnForward")))
+        # time.sleep(random_delay())
+        # confirm_button.click()
 
         # Wait for next page to load
         wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
@@ -289,7 +336,7 @@ def main():
 
         # Keep the browser window open
         input("Press Enter to close the browser...")
-        
+
     except Exception as e:
         print(f"Error during navigation: {str(e)}")
         raise
