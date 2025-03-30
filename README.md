@@ -84,6 +84,11 @@ Both scripts include error handling for:
 
 These scripts are for educational purposes only. Please ensure you comply with Taito City's terms of service and booking policies when using these scripts.
 
+## Database setup
+
+-- ensure sqlite3 is installed
+-- setup_db `sqlite3 tokyogym.db < db.sql`
+
 ## License
 
 [Your chosen license]
