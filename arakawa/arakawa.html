@@ -1,0 +1,2891 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="content-style-type" content="text/css">
+	<meta http-equiv="content-script-type" content="text/javascript">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title>施設予約システム／予約申込</title>
+	<link rel="stylesheet" href="/stagia/jsp/stylesheets_jp/normal.css" type="text/css">
+	<script language="javascript" src="a.js"></script>
+</head>
+
+
+<form name="chgDspDateFrm" action="" target="_parent" method="post">
+	<input type="hidden" name="g_sessionid" value="Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf">
+	<input type="hidden" name="u_genzai_idx" value="">
+	<input type="hidden" name="hiduke_sousa_flg" value="">
+	<input type="hidden" name="u_hyojibi" value="">
+
+
+	<input type="hidden" value="" name="showStartKoma" />
+	<input type="hidden" value="" name="showEndKoma" />
+
+
+
+
+
+
+
+	<input type="hidden" name="selectdate" value="20250330">
+
+
+
+
+
+	<input type="hidden" name="yoyakuinfo" value="">
+
+</form>
+
+<!--  edited by jack <body onload="javascript:initDate(2025,04),initYoubi();">   to javascript:initDate(2025,'04'),initYoubi()-->
+
+<body onload="javascript:initDate(2025,'04'),initYoubi();">
+	<div id="holder">
+		<div id="header">
+
+
+
+
+			<h1><img src="/stagia/jsp/images_jp/multi_images/title.gif" alt="施設予約システム" title="施設予約システム" /></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<input type="image" id="back-button" style="cursor:pointer" onClick="returnPrevPage()"
+				src="/stagia/jsp/images_jp/multi_images/btn-back.gif" alt="前へ戻る" title="前へ戻る">
+
+
+
+
+
+
+			<form name="bkFrm" action="" method="post">
+				<input type="hidden" name="g_sessionid" value="Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf">
+				<input type="hidden" name="u_genzai_idx" value="5">
+				<input type="hidden" name="g_kinonaiyo" value="17">
+			</form>
+
+
+		</div><!-- header -->
+
+		<div id="contents-holder">
+
+			<div id="sidebar">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<div id="login-area">
+
+					<p id="welcome">ようこそ<br />ＮＴＰＲ&nbsp;&nbsp;さん</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<p id="logout"><input type="image" style="cursor:pointer" onclick="goMenu()"
+							src="/stagia/jsp/images_jp/multi_images/btn-logout.gif" alt=ログアウト title=ログアウト></img></p>
+
+
+
+
+
+
+
+					<input type="hidden" name="u_genzai_idx" value="0">
+					<input type="hidden" name="g_kinonaiyo" value="35">
+
+				</div>
+				<!-- login-area -->
+
+
+				<script language="javascript" src="b.js">
+				</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<p id="to-top-page"><a
+						onclick="goBack('/stagia/reserve/gml_login?g_sessionid=Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf')"
+						href='#'>トップページへ戻る</a></p>
+
+
+
+
+				<dl id="local-navigation">
+					<dt>利用者メニュー</dt>
+					<dd>
+						<ul>
+							<li class='active'><a>予約申込</a></li>
+							<li><a onClick="goBack('/stagia/reserve/gml_c_group_sel_1?u_genzai_idx=0&g_kinonaiyo=24&g_sessionid=Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf')"
+									href='#'>抽選申込</a></li>
+							<li><a onClick="goBack('/stagia/reserve/gml_s_z_result_list?u_genzai_idx=0&g_kinonaiyo=19&g_sessionid=Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf')"
+									href='#'>予約申込内容の確認と削除</a></li>
+							<li><a onClick="goBack('/stagia/reserve/gml_s_c_list?u_genzai_idx=0&g_kinonaiyo=26&g_sessionid=Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf')"
+									href='#'>抽選申込内容の確認と削除</a></li>
+							<li><a onClick="goBack('/stagia/reserve/gml_s_c_list2?u_genzai_idx=0&g_kinonaiyo=46&g_sessionid=Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf')"
+									href='#'>予約申込に関する履歴の確認</a></li>
+							<li><a onClick="goBack('/stagia/reserve/gml_s_c_list1?u_genzai_idx=0&g_kinonaiyo=47&g_sessionid=Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf')"
+									href='#'>抽選申込に関する履歴の確認</a></li>
+							<li><a onClick="goBack('/stagia/reserve/gml_r_mod_info?u_genzai_idx=0&g_kinonaiyo=39&g_sessionid=Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf')"
+									href='#'>利用者情報の変更</a></li>
+							<li><a onClick="goBack('/stagia/reserve/gml_s_favorites_conf?u_genzai_idx=0&g_kinonaiyo=41&g_sessionid=Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf')"
+									href='#'>お気に入り</a></li>
+							<li><a onClick="goBack('/stagia/reserve/gml_a_group_sel_1?u_genzai_idx=0&g_kinonaiyo=13&g_sessionid=Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf')"
+									href='#'>施設案内</a></li>
+						</ul>
+					</dd>
+				</dl>
+
+
+				<script language="javascript" src="goback.js"></script>
+
+
+
+			</div><!-- sidebar -->
+			<div id="contents">
+				<div id="status-window">
+					<p>
+
+
+
+
+						予約申込される時間（区分）を選択してください。全ての入力が終わりましたら、予約リストへボタンを押してください。
+
+
+
+
+					</p>
+				</div><!-- status-window -->
+				<div class="block">
+					<h2><span>予約状況</span></h2>
+					<div class="inner-block">
+						<h3><span>令和07年05月30日(金)</span></h3>
+						<ul class="double time-navigation">
+
+
+
+
+
+
+							<li><a
+									href="javaScript:changeDspDay('/stagia/reserve/gml_z_datetime_display', 6, 3, 20250430);">前月</a>
+								<A
+									href="javaScript:changeDspDay('/stagia/reserve/gml_z_datetime_display', 6, 5, 20250523);">前週</a>
+								<A
+									href="javaScript:changeDspDay('/stagia/reserve/gml_z_datetime_display', 6, 0, 20250529);">前へ</A>
+							</li>
+							<li class="right"><A
+									href="javaScript:changeDspDay('/stagia/reserve/gml_z_datetime_display', 6, 1, 20250531);">次へ</a>
+								<A
+									href="javaScript:changeDspDay('/stagia/reserve/gml_z_datetime_display', 6, 6, 20250606);">翌週</a>
+								<A
+									href="javaScript:changeDspDay('/stagia/reserve/gml_z_datetime_display', 6, 4, 20250630);">翌月</A>
+							</li>
+
+
+
+
+						</ul>
+						<div class="timetable">
+							<ul class="buttons">
+
+
+
+
+								<li><a href="javascript: goto_amenity_display()"><img
+											src="/stagia/jsp/images_jp/multi_images/btn-establishment.gif" alt="1週間表示"
+											title="1週間表示" /></a></li>
+
+
+							</ul>
+							<ul class="navigation">
+
+
+
+
+
+
+
+
+								<li class="prev"><a><input type="image" style="cursor:pointer" id="leftbutton"
+											onClick="leftbutton()"
+											src="/stagia/jsp/images_jp/multi_images/btn-nav-prev.gif" alt="←" title="←"
+											STYLE="display:none" /></a></li>
+								<li class="next"><a><input type="image" style="cursor:pointer" id="rightbutton"
+											onClick="rightbutton()"
+											src="/stagia/jsp/images_jp/multi_images/btn-nav-next.gif" alt="→" title="→"
+											STYLE="display:none" /></a></li>
+
+
+
+
+							</ul>
+
+
+
+							<table id="1">
+
+
+								<input type="hidden" name="hkomaptn0" value="610">
+
+
+
+
+
+
+
+
+
+
+
+								<thead>
+									<TR>
+										<td class="empty">&nbsp;</td>
+
+										<th id="td10_1">
+
+
+
+											09:00<br />
+											<span>～</span><br />
+											12:00
+
+
+
+										</th>
+
+
+
+										<th id="td10_2">
+
+
+
+											12:30<br />
+											<span>～</span><br />
+											15:00
+
+
+
+										</th>
+
+
+
+										<th id="td10_3">
+
+
+
+											15:30<br />
+											<span>～</span><br />
+											18:00
+
+
+
+										</th>
+
+
+
+										<th id="td10_4">
+
+
+
+											18:30<br />
+											<span>～</span><br />
+											21:30
+
+
+
+										</th>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									</TR>
+								</thead>
+
+
+
+
+
+
+
+
+
+
+
+								<input type="hidden" id="record0_1" value="0">
+
+
+
+
+
+
+
+
+								<input type="hidden" id="kaisitime0_2" value="09:00">
+								<input type="hidden" id="syuryotime0_2" value="12:00">
+
+
+								<input type="hidden" id="taiyokbn0_2" value="2">
+								<input type="hidden" id="kubuncdnm0_2" value="2">
+
+
+
+								<input type="hidden" id="fhantekoma0_2" value="">
+								<input type="hidden" id="fhantekomasu0_2" value="0">
+
+
+								<tbody>
+
+
+									<tr>
+										<th align=left><strong>荒川総合スポーツセンター</strong><br />大体育室半面１</th>
+
+
+
+
+
+
+										<td id="td11_1" class="ng">Ｘ</td>
+
+
+
+
+
+
+										<input type="hidden" id="record0_2" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_3" value="12:30">
+										<input type="hidden" id="syuryotime0_3" value="15:00">
+
+
+										<input type="hidden" id="taiyokbn0_3" value="2">
+										<input type="hidden" id="kubuncdnm0_3" value="4">
+
+
+
+										<input type="hidden" id="fhantekoma0_3" value="">
+										<input type="hidden" id="fhantekomasu0_3" value="0">
+
+
+
+
+
+
+
+										<td id="td11_2" class="ok"><input type="image" id="button0_3"
+												onClick="onclickbutton(0,3,'td11_2', '3')"
+												src="/stagia/jsp/images_jp/multi_images/timetable-o.gif" alt="O"
+												title="O"></td>
+
+
+
+
+
+
+										<input type="hidden" id="record0_3" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_4" value="15:30">
+										<input type="hidden" id="syuryotime0_4" value="18:00">
+
+
+										<input type="hidden" id="taiyokbn0_4" value="2">
+										<input type="hidden" id="kubuncdnm0_4" value="4">
+
+
+
+										<input type="hidden" id="fhantekoma0_4" value="">
+										<input type="hidden" id="fhantekomasu0_4" value="0">
+
+
+
+
+
+
+										<td id="td11_3" class="ng">Ｘ</td>
+
+
+
+
+
+
+										<input type="hidden" id="record0_4" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_5" value="18:30">
+										<input type="hidden" id="syuryotime0_5" value="21:30">
+
+
+										<input type="hidden" id="taiyokbn0_5" value="2">
+										<input type="hidden" id="kubuncdnm0_5" value="6">
+
+
+
+										<input type="hidden" id="fhantekoma0_5" value="">
+										<input type="hidden" id="fhantekomasu0_5" value="0">
+
+
+
+
+
+
+										<td id="td11_4" class="ng">開放</td>
+
+
+
+
+
+
+										<input type="hidden" id="record0_5" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_6" value="">
+										<input type="hidden" id="syuryotime0_6" value="">
+
+
+										<input type="hidden" id="taiyokbn0_6" value="2">
+										<input type="hidden" id="kubuncdnm0_6" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_6" value="">
+										<input type="hidden" id="fhantekomasu0_6" value="0">
+
+
+
+
+										<input type="hidden" id="record0_6" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_7" value="">
+										<input type="hidden" id="syuryotime0_7" value="">
+
+
+										<input type="hidden" id="taiyokbn0_7" value="2">
+										<input type="hidden" id="kubuncdnm0_7" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_7" value="">
+										<input type="hidden" id="fhantekomasu0_7" value="0">
+
+
+
+
+										<input type="hidden" id="record0_7" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_8" value="">
+										<input type="hidden" id="syuryotime0_8" value="">
+
+
+										<input type="hidden" id="taiyokbn0_8" value="2">
+										<input type="hidden" id="kubuncdnm0_8" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_8" value="">
+										<input type="hidden" id="fhantekomasu0_8" value="0">
+
+
+
+
+										<input type="hidden" id="record0_8" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_9" value="">
+										<input type="hidden" id="syuryotime0_9" value="">
+
+
+										<input type="hidden" id="taiyokbn0_9" value="2">
+										<input type="hidden" id="kubuncdnm0_9" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_9" value="">
+										<input type="hidden" id="fhantekomasu0_9" value="0">
+
+
+
+
+										<input type="hidden" id="record0_9" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_10" value="">
+										<input type="hidden" id="syuryotime0_10" value="">
+
+
+										<input type="hidden" id="taiyokbn0_10" value="2">
+										<input type="hidden" id="kubuncdnm0_10" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_10" value="">
+										<input type="hidden" id="fhantekomasu0_10" value="0">
+
+
+
+
+										<input type="hidden" id="record0_10" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_11" value="">
+										<input type="hidden" id="syuryotime0_11" value="">
+
+
+										<input type="hidden" id="taiyokbn0_11" value="2">
+										<input type="hidden" id="kubuncdnm0_11" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_11" value="">
+										<input type="hidden" id="fhantekomasu0_11" value="0">
+
+
+
+
+										<input type="hidden" id="record0_11" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_12" value="">
+										<input type="hidden" id="syuryotime0_12" value="">
+
+
+										<input type="hidden" id="taiyokbn0_12" value="2">
+										<input type="hidden" id="kubuncdnm0_12" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_12" value="">
+										<input type="hidden" id="fhantekomasu0_12" value="0">
+
+
+
+
+										<input type="hidden" id="record0_12" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_13" value="">
+										<input type="hidden" id="syuryotime0_13" value="">
+
+
+										<input type="hidden" id="taiyokbn0_13" value="2">
+										<input type="hidden" id="kubuncdnm0_13" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_13" value="">
+										<input type="hidden" id="fhantekomasu0_13" value="0">
+
+
+
+
+										<input type="hidden" id="record0_13" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_14" value="">
+										<input type="hidden" id="syuryotime0_14" value="">
+
+
+										<input type="hidden" id="taiyokbn0_14" value="2">
+										<input type="hidden" id="kubuncdnm0_14" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_14" value="">
+										<input type="hidden" id="fhantekomasu0_14" value="0">
+
+
+
+
+										<input type="hidden" id="record0_14" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_15" value="">
+										<input type="hidden" id="syuryotime0_15" value="">
+
+
+										<input type="hidden" id="taiyokbn0_15" value="2">
+										<input type="hidden" id="kubuncdnm0_15" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_15" value="">
+										<input type="hidden" id="fhantekomasu0_15" value="0">
+
+
+
+
+										<input type="hidden" id="record0_15" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_16" value="">
+										<input type="hidden" id="syuryotime0_16" value="">
+
+
+										<input type="hidden" id="taiyokbn0_16" value="2">
+										<input type="hidden" id="kubuncdnm0_16" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_16" value="">
+										<input type="hidden" id="fhantekomasu0_16" value="0">
+
+
+
+
+										<input type="hidden" id="record0_16" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_17" value="">
+										<input type="hidden" id="syuryotime0_17" value="">
+
+
+										<input type="hidden" id="taiyokbn0_17" value="2">
+										<input type="hidden" id="kubuncdnm0_17" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_17" value="">
+										<input type="hidden" id="fhantekomasu0_17" value="0">
+
+
+
+
+										<input type="hidden" id="record0_17" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_18" value="">
+										<input type="hidden" id="syuryotime0_18" value="">
+
+
+										<input type="hidden" id="taiyokbn0_18" value="2">
+										<input type="hidden" id="kubuncdnm0_18" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_18" value="">
+										<input type="hidden" id="fhantekomasu0_18" value="0">
+
+
+
+
+										<input type="hidden" id="record0_18" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_19" value="">
+										<input type="hidden" id="syuryotime0_19" value="">
+
+
+										<input type="hidden" id="taiyokbn0_19" value="2">
+										<input type="hidden" id="kubuncdnm0_19" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_19" value="">
+										<input type="hidden" id="fhantekomasu0_19" value="0">
+
+
+
+
+										<input type="hidden" id="record0_19" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_20" value="">
+										<input type="hidden" id="syuryotime0_20" value="">
+
+
+										<input type="hidden" id="taiyokbn0_20" value="2">
+										<input type="hidden" id="kubuncdnm0_20" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_20" value="">
+										<input type="hidden" id="fhantekomasu0_20" value="0">
+
+
+
+
+										<input type="hidden" id="record0_20" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_21" value="">
+										<input type="hidden" id="syuryotime0_21" value="">
+
+
+										<input type="hidden" id="taiyokbn0_21" value="2">
+										<input type="hidden" id="kubuncdnm0_21" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_21" value="">
+										<input type="hidden" id="fhantekomasu0_21" value="0">
+
+
+
+
+										<input type="hidden" id="record0_21" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_22" value="">
+										<input type="hidden" id="syuryotime0_22" value="">
+
+
+										<input type="hidden" id="taiyokbn0_22" value="2">
+										<input type="hidden" id="kubuncdnm0_22" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_22" value="">
+										<input type="hidden" id="fhantekomasu0_22" value="0">
+
+
+
+
+										<input type="hidden" id="record0_22" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_23" value="">
+										<input type="hidden" id="syuryotime0_23" value="">
+
+
+										<input type="hidden" id="taiyokbn0_23" value="2">
+										<input type="hidden" id="kubuncdnm0_23" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_23" value="">
+										<input type="hidden" id="fhantekomasu0_23" value="0">
+
+
+
+
+										<input type="hidden" id="record0_23" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_24" value="">
+										<input type="hidden" id="syuryotime0_24" value="">
+
+
+										<input type="hidden" id="taiyokbn0_24" value="2">
+										<input type="hidden" id="kubuncdnm0_24" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_24" value="">
+										<input type="hidden" id="fhantekomasu0_24" value="0">
+
+
+
+
+										<input type="hidden" id="record0_24" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_25" value="">
+										<input type="hidden" id="syuryotime0_25" value="">
+
+
+										<input type="hidden" id="taiyokbn0_25" value="2">
+										<input type="hidden" id="kubuncdnm0_25" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_25" value="">
+										<input type="hidden" id="fhantekomasu0_25" value="0">
+
+
+
+
+										<input type="hidden" id="record0_25" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_26" value="">
+										<input type="hidden" id="syuryotime0_26" value="">
+
+
+										<input type="hidden" id="taiyokbn0_26" value="2">
+										<input type="hidden" id="kubuncdnm0_26" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_26" value="">
+										<input type="hidden" id="fhantekomasu0_26" value="0">
+
+
+
+
+										<input type="hidden" id="record0_26" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime0_27" value="">
+										<input type="hidden" id="syuryotime0_27" value="">
+
+
+										<input type="hidden" id="taiyokbn0_27" value="2">
+										<input type="hidden" id="kubuncdnm0_27" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma0_27" value="">
+										<input type="hidden" id="fhantekomasu0_27" value="0">
+
+
+
+
+										<input type="hidden" id="record0_27" value="0">
+
+
+
+
+
+
+
+
+
+
+										<input type="hidden" id="record0_28" value="0">
+
+
+
+
+									</tr>
+								</tbody>
+
+
+								<input type="hidden" name="hkomaptn01" value="610">
+
+
+
+
+
+
+
+
+
+
+
+								<input type="hidden" id="record1_1" value="0">
+
+
+
+
+
+
+
+
+								<input type="hidden" id="kaisitime1_2" value="09:00">
+								<input type="hidden" id="syuryotime1_2" value="12:00">
+
+
+								<input type="hidden" id="taiyokbn1_2" value="2">
+								<input type="hidden" id="kubuncdnm1_2" value="2">
+
+
+
+								<input type="hidden" id="fhantekoma1_2" value="">
+								<input type="hidden" id="fhantekomasu1_2" value="0">
+
+
+								<tbody>
+
+
+									<tr>
+										<th align=left><strong>荒川総合スポーツセンター</strong><br />大体育室半面２</th>
+
+
+
+
+
+
+										<td id="td12_1" class="ng">開放</td>
+
+
+
+
+
+
+										<input type="hidden" id="record1_2" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_3" value="12:30">
+										<input type="hidden" id="syuryotime1_3" value="15:00">
+
+
+										<input type="hidden" id="taiyokbn1_3" value="2">
+										<input type="hidden" id="kubuncdnm1_3" value="4">
+
+
+
+										<input type="hidden" id="fhantekoma1_3" value="">
+										<input type="hidden" id="fhantekomasu1_3" value="0">
+
+
+
+
+
+
+										<td id="td12_2" class="ng">開放</td>
+
+
+
+
+
+
+										<input type="hidden" id="record1_3" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_4" value="15:30">
+										<input type="hidden" id="syuryotime1_4" value="18:00">
+
+
+										<input type="hidden" id="taiyokbn1_4" value="2">
+										<input type="hidden" id="kubuncdnm1_4" value="4">
+
+
+
+										<input type="hidden" id="fhantekoma1_4" value="">
+										<input type="hidden" id="fhantekomasu1_4" value="0">
+
+
+
+
+
+
+										<td id="td12_3" class="ng">開放</td>
+
+
+
+
+
+
+										<input type="hidden" id="record1_4" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_5" value="18:30">
+										<input type="hidden" id="syuryotime1_5" value="21:30">
+
+
+										<input type="hidden" id="taiyokbn1_5" value="2">
+										<input type="hidden" id="kubuncdnm1_5" value="6">
+
+
+
+										<input type="hidden" id="fhantekoma1_5" value="">
+										<input type="hidden" id="fhantekomasu1_5" value="0">
+
+
+
+
+
+
+										<td id="td12_4" class="ng">開放</td>
+
+
+
+
+
+
+										<input type="hidden" id="record1_5" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_6" value="">
+										<input type="hidden" id="syuryotime1_6" value="">
+
+
+										<input type="hidden" id="taiyokbn1_6" value="2">
+										<input type="hidden" id="kubuncdnm1_6" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_6" value="">
+										<input type="hidden" id="fhantekomasu1_6" value="0">
+
+
+
+
+										<input type="hidden" id="record1_6" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_7" value="">
+										<input type="hidden" id="syuryotime1_7" value="">
+
+
+										<input type="hidden" id="taiyokbn1_7" value="2">
+										<input type="hidden" id="kubuncdnm1_7" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_7" value="">
+										<input type="hidden" id="fhantekomasu1_7" value="0">
+
+
+
+
+										<input type="hidden" id="record1_7" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_8" value="">
+										<input type="hidden" id="syuryotime1_8" value="">
+
+
+										<input type="hidden" id="taiyokbn1_8" value="2">
+										<input type="hidden" id="kubuncdnm1_8" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_8" value="">
+										<input type="hidden" id="fhantekomasu1_8" value="0">
+
+
+
+
+										<input type="hidden" id="record1_8" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_9" value="">
+										<input type="hidden" id="syuryotime1_9" value="">
+
+
+										<input type="hidden" id="taiyokbn1_9" value="2">
+										<input type="hidden" id="kubuncdnm1_9" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_9" value="">
+										<input type="hidden" id="fhantekomasu1_9" value="0">
+
+
+
+
+										<input type="hidden" id="record1_9" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_10" value="">
+										<input type="hidden" id="syuryotime1_10" value="">
+
+
+										<input type="hidden" id="taiyokbn1_10" value="2">
+										<input type="hidden" id="kubuncdnm1_10" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_10" value="">
+										<input type="hidden" id="fhantekomasu1_10" value="0">
+
+
+
+
+										<input type="hidden" id="record1_10" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_11" value="">
+										<input type="hidden" id="syuryotime1_11" value="">
+
+
+										<input type="hidden" id="taiyokbn1_11" value="2">
+										<input type="hidden" id="kubuncdnm1_11" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_11" value="">
+										<input type="hidden" id="fhantekomasu1_11" value="0">
+
+
+
+
+										<input type="hidden" id="record1_11" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_12" value="">
+										<input type="hidden" id="syuryotime1_12" value="">
+
+
+										<input type="hidden" id="taiyokbn1_12" value="2">
+										<input type="hidden" id="kubuncdnm1_12" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_12" value="">
+										<input type="hidden" id="fhantekomasu1_12" value="0">
+
+
+
+
+										<input type="hidden" id="record1_12" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_13" value="">
+										<input type="hidden" id="syuryotime1_13" value="">
+
+
+										<input type="hidden" id="taiyokbn1_13" value="2">
+										<input type="hidden" id="kubuncdnm1_13" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_13" value="">
+										<input type="hidden" id="fhantekomasu1_13" value="0">
+
+
+
+
+										<input type="hidden" id="record1_13" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_14" value="">
+										<input type="hidden" id="syuryotime1_14" value="">
+
+
+										<input type="hidden" id="taiyokbn1_14" value="2">
+										<input type="hidden" id="kubuncdnm1_14" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_14" value="">
+										<input type="hidden" id="fhantekomasu1_14" value="0">
+
+
+
+
+										<input type="hidden" id="record1_14" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_15" value="">
+										<input type="hidden" id="syuryotime1_15" value="">
+
+
+										<input type="hidden" id="taiyokbn1_15" value="2">
+										<input type="hidden" id="kubuncdnm1_15" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_15" value="">
+										<input type="hidden" id="fhantekomasu1_15" value="0">
+
+
+
+
+										<input type="hidden" id="record1_15" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_16" value="">
+										<input type="hidden" id="syuryotime1_16" value="">
+
+
+										<input type="hidden" id="taiyokbn1_16" value="2">
+										<input type="hidden" id="kubuncdnm1_16" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_16" value="">
+										<input type="hidden" id="fhantekomasu1_16" value="0">
+
+
+
+
+										<input type="hidden" id="record1_16" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_17" value="">
+										<input type="hidden" id="syuryotime1_17" value="">
+
+
+										<input type="hidden" id="taiyokbn1_17" value="2">
+										<input type="hidden" id="kubuncdnm1_17" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_17" value="">
+										<input type="hidden" id="fhantekomasu1_17" value="0">
+
+
+
+
+										<input type="hidden" id="record1_17" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_18" value="">
+										<input type="hidden" id="syuryotime1_18" value="">
+
+
+										<input type="hidden" id="taiyokbn1_18" value="2">
+										<input type="hidden" id="kubuncdnm1_18" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_18" value="">
+										<input type="hidden" id="fhantekomasu1_18" value="0">
+
+
+
+
+										<input type="hidden" id="record1_18" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_19" value="">
+										<input type="hidden" id="syuryotime1_19" value="">
+
+
+										<input type="hidden" id="taiyokbn1_19" value="2">
+										<input type="hidden" id="kubuncdnm1_19" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_19" value="">
+										<input type="hidden" id="fhantekomasu1_19" value="0">
+
+
+
+
+										<input type="hidden" id="record1_19" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_20" value="">
+										<input type="hidden" id="syuryotime1_20" value="">
+
+
+										<input type="hidden" id="taiyokbn1_20" value="2">
+										<input type="hidden" id="kubuncdnm1_20" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_20" value="">
+										<input type="hidden" id="fhantekomasu1_20" value="0">
+
+
+
+
+										<input type="hidden" id="record1_20" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_21" value="">
+										<input type="hidden" id="syuryotime1_21" value="">
+
+
+										<input type="hidden" id="taiyokbn1_21" value="2">
+										<input type="hidden" id="kubuncdnm1_21" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_21" value="">
+										<input type="hidden" id="fhantekomasu1_21" value="0">
+
+
+
+
+										<input type="hidden" id="record1_21" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_22" value="">
+										<input type="hidden" id="syuryotime1_22" value="">
+
+
+										<input type="hidden" id="taiyokbn1_22" value="2">
+										<input type="hidden" id="kubuncdnm1_22" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_22" value="">
+										<input type="hidden" id="fhantekomasu1_22" value="0">
+
+
+
+
+										<input type="hidden" id="record1_22" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_23" value="">
+										<input type="hidden" id="syuryotime1_23" value="">
+
+
+										<input type="hidden" id="taiyokbn1_23" value="2">
+										<input type="hidden" id="kubuncdnm1_23" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_23" value="">
+										<input type="hidden" id="fhantekomasu1_23" value="0">
+
+
+
+
+										<input type="hidden" id="record1_23" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_24" value="">
+										<input type="hidden" id="syuryotime1_24" value="">
+
+
+										<input type="hidden" id="taiyokbn1_24" value="2">
+										<input type="hidden" id="kubuncdnm1_24" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_24" value="">
+										<input type="hidden" id="fhantekomasu1_24" value="0">
+
+
+
+
+										<input type="hidden" id="record1_24" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_25" value="">
+										<input type="hidden" id="syuryotime1_25" value="">
+
+
+										<input type="hidden" id="taiyokbn1_25" value="2">
+										<input type="hidden" id="kubuncdnm1_25" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_25" value="">
+										<input type="hidden" id="fhantekomasu1_25" value="0">
+
+
+
+
+										<input type="hidden" id="record1_25" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_26" value="">
+										<input type="hidden" id="syuryotime1_26" value="">
+
+
+										<input type="hidden" id="taiyokbn1_26" value="2">
+										<input type="hidden" id="kubuncdnm1_26" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_26" value="">
+										<input type="hidden" id="fhantekomasu1_26" value="0">
+
+
+
+
+										<input type="hidden" id="record1_26" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime1_27" value="">
+										<input type="hidden" id="syuryotime1_27" value="">
+
+
+										<input type="hidden" id="taiyokbn1_27" value="2">
+										<input type="hidden" id="kubuncdnm1_27" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma1_27" value="">
+										<input type="hidden" id="fhantekomasu1_27" value="0">
+
+
+
+
+										<input type="hidden" id="record1_27" value="0">
+
+
+
+
+
+
+
+
+
+
+										<input type="hidden" id="record1_28" value="0">
+
+
+
+
+									</tr>
+								</tbody>
+
+
+								<input type="hidden" name="hkomaptn012" value="610">
+
+
+
+
+
+
+
+
+
+
+
+								<input type="hidden" id="record2_1" value="0">
+
+
+
+
+
+
+
+
+								<input type="hidden" id="kaisitime2_2" value="09:00">
+								<input type="hidden" id="syuryotime2_2" value="12:00">
+
+
+								<input type="hidden" id="taiyokbn2_2" value="2">
+								<input type="hidden" id="kubuncdnm2_2" value="2">
+
+
+
+								<input type="hidden" id="fhantekoma2_2" value="">
+								<input type="hidden" id="fhantekomasu2_2" value="0">
+
+
+								<tbody>
+
+
+									<tr>
+										<th align=left><strong>荒川総合スポーツセンター</strong><br />小体育室</th>
+
+
+
+
+
+
+										<td id="td13_1" class="ng">Ｘ</td>
+
+
+
+
+
+
+										<input type="hidden" id="record2_2" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_3" value="12:30">
+										<input type="hidden" id="syuryotime2_3" value="15:00">
+
+
+										<input type="hidden" id="taiyokbn2_3" value="2">
+										<input type="hidden" id="kubuncdnm2_3" value="4">
+
+
+
+										<input type="hidden" id="fhantekoma2_3" value="">
+										<input type="hidden" id="fhantekomasu2_3" value="0">
+
+
+
+
+
+
+
+										<td id="td13_2" class="ok"><input type="image" id="button2_3"
+												onClick="onclickbutton(2,3,'td13_2', '3')"
+												src="/stagia/jsp/images_jp/multi_images/timetable-o.gif" alt="O"
+												title="O"></td>
+
+
+
+
+
+
+										<input type="hidden" id="record2_3" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_4" value="15:30">
+										<input type="hidden" id="syuryotime2_4" value="18:00">
+
+
+										<input type="hidden" id="taiyokbn2_4" value="2">
+										<input type="hidden" id="kubuncdnm2_4" value="4">
+
+
+
+										<input type="hidden" id="fhantekoma2_4" value="">
+										<input type="hidden" id="fhantekomasu2_4" value="0">
+
+
+
+
+
+
+										<td id="td13_3" class="ng">Ｘ</td>
+
+
+
+
+
+
+										<input type="hidden" id="record2_4" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_5" value="18:30">
+										<input type="hidden" id="syuryotime2_5" value="21:30">
+
+
+										<input type="hidden" id="taiyokbn2_5" value="2">
+										<input type="hidden" id="kubuncdnm2_5" value="6">
+
+
+
+										<input type="hidden" id="fhantekoma2_5" value="">
+										<input type="hidden" id="fhantekomasu2_5" value="0">
+
+
+
+
+
+
+										<td id="td13_4" class="ng">Ｘ</td>
+
+
+
+
+
+
+										<input type="hidden" id="record2_5" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_6" value="">
+										<input type="hidden" id="syuryotime2_6" value="">
+
+
+										<input type="hidden" id="taiyokbn2_6" value="2">
+										<input type="hidden" id="kubuncdnm2_6" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_6" value="">
+										<input type="hidden" id="fhantekomasu2_6" value="0">
+
+
+
+
+										<input type="hidden" id="record2_6" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_7" value="">
+										<input type="hidden" id="syuryotime2_7" value="">
+
+
+										<input type="hidden" id="taiyokbn2_7" value="2">
+										<input type="hidden" id="kubuncdnm2_7" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_7" value="">
+										<input type="hidden" id="fhantekomasu2_7" value="0">
+
+
+
+
+										<input type="hidden" id="record2_7" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_8" value="">
+										<input type="hidden" id="syuryotime2_8" value="">
+
+
+										<input type="hidden" id="taiyokbn2_8" value="2">
+										<input type="hidden" id="kubuncdnm2_8" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_8" value="">
+										<input type="hidden" id="fhantekomasu2_8" value="0">
+
+
+
+
+										<input type="hidden" id="record2_8" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_9" value="">
+										<input type="hidden" id="syuryotime2_9" value="">
+
+
+										<input type="hidden" id="taiyokbn2_9" value="2">
+										<input type="hidden" id="kubuncdnm2_9" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_9" value="">
+										<input type="hidden" id="fhantekomasu2_9" value="0">
+
+
+
+
+										<input type="hidden" id="record2_9" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_10" value="">
+										<input type="hidden" id="syuryotime2_10" value="">
+
+
+										<input type="hidden" id="taiyokbn2_10" value="2">
+										<input type="hidden" id="kubuncdnm2_10" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_10" value="">
+										<input type="hidden" id="fhantekomasu2_10" value="0">
+
+
+
+
+										<input type="hidden" id="record2_10" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_11" value="">
+										<input type="hidden" id="syuryotime2_11" value="">
+
+
+										<input type="hidden" id="taiyokbn2_11" value="2">
+										<input type="hidden" id="kubuncdnm2_11" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_11" value="">
+										<input type="hidden" id="fhantekomasu2_11" value="0">
+
+
+
+
+										<input type="hidden" id="record2_11" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_12" value="">
+										<input type="hidden" id="syuryotime2_12" value="">
+
+
+										<input type="hidden" id="taiyokbn2_12" value="2">
+										<input type="hidden" id="kubuncdnm2_12" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_12" value="">
+										<input type="hidden" id="fhantekomasu2_12" value="0">
+
+
+
+
+										<input type="hidden" id="record2_12" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_13" value="">
+										<input type="hidden" id="syuryotime2_13" value="">
+
+
+										<input type="hidden" id="taiyokbn2_13" value="2">
+										<input type="hidden" id="kubuncdnm2_13" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_13" value="">
+										<input type="hidden" id="fhantekomasu2_13" value="0">
+
+
+
+
+										<input type="hidden" id="record2_13" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_14" value="">
+										<input type="hidden" id="syuryotime2_14" value="">
+
+
+										<input type="hidden" id="taiyokbn2_14" value="2">
+										<input type="hidden" id="kubuncdnm2_14" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_14" value="">
+										<input type="hidden" id="fhantekomasu2_14" value="0">
+
+
+
+
+										<input type="hidden" id="record2_14" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_15" value="">
+										<input type="hidden" id="syuryotime2_15" value="">
+
+
+										<input type="hidden" id="taiyokbn2_15" value="2">
+										<input type="hidden" id="kubuncdnm2_15" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_15" value="">
+										<input type="hidden" id="fhantekomasu2_15" value="0">
+
+
+
+
+										<input type="hidden" id="record2_15" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_16" value="">
+										<input type="hidden" id="syuryotime2_16" value="">
+
+
+										<input type="hidden" id="taiyokbn2_16" value="2">
+										<input type="hidden" id="kubuncdnm2_16" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_16" value="">
+										<input type="hidden" id="fhantekomasu2_16" value="0">
+
+
+
+
+										<input type="hidden" id="record2_16" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_17" value="">
+										<input type="hidden" id="syuryotime2_17" value="">
+
+
+										<input type="hidden" id="taiyokbn2_17" value="2">
+										<input type="hidden" id="kubuncdnm2_17" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_17" value="">
+										<input type="hidden" id="fhantekomasu2_17" value="0">
+
+
+
+
+										<input type="hidden" id="record2_17" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_18" value="">
+										<input type="hidden" id="syuryotime2_18" value="">
+
+
+										<input type="hidden" id="taiyokbn2_18" value="2">
+										<input type="hidden" id="kubuncdnm2_18" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_18" value="">
+										<input type="hidden" id="fhantekomasu2_18" value="0">
+
+
+
+
+										<input type="hidden" id="record2_18" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_19" value="">
+										<input type="hidden" id="syuryotime2_19" value="">
+
+
+										<input type="hidden" id="taiyokbn2_19" value="2">
+										<input type="hidden" id="kubuncdnm2_19" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_19" value="">
+										<input type="hidden" id="fhantekomasu2_19" value="0">
+
+
+
+
+										<input type="hidden" id="record2_19" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_20" value="">
+										<input type="hidden" id="syuryotime2_20" value="">
+
+
+										<input type="hidden" id="taiyokbn2_20" value="2">
+										<input type="hidden" id="kubuncdnm2_20" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_20" value="">
+										<input type="hidden" id="fhantekomasu2_20" value="0">
+
+
+
+
+										<input type="hidden" id="record2_20" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_21" value="">
+										<input type="hidden" id="syuryotime2_21" value="">
+
+
+										<input type="hidden" id="taiyokbn2_21" value="2">
+										<input type="hidden" id="kubuncdnm2_21" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_21" value="">
+										<input type="hidden" id="fhantekomasu2_21" value="0">
+
+
+
+
+										<input type="hidden" id="record2_21" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_22" value="">
+										<input type="hidden" id="syuryotime2_22" value="">
+
+
+										<input type="hidden" id="taiyokbn2_22" value="2">
+										<input type="hidden" id="kubuncdnm2_22" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_22" value="">
+										<input type="hidden" id="fhantekomasu2_22" value="0">
+
+
+
+
+										<input type="hidden" id="record2_22" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_23" value="">
+										<input type="hidden" id="syuryotime2_23" value="">
+
+
+										<input type="hidden" id="taiyokbn2_23" value="2">
+										<input type="hidden" id="kubuncdnm2_23" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_23" value="">
+										<input type="hidden" id="fhantekomasu2_23" value="0">
+
+
+
+
+										<input type="hidden" id="record2_23" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_24" value="">
+										<input type="hidden" id="syuryotime2_24" value="">
+
+
+										<input type="hidden" id="taiyokbn2_24" value="2">
+										<input type="hidden" id="kubuncdnm2_24" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_24" value="">
+										<input type="hidden" id="fhantekomasu2_24" value="0">
+
+
+
+
+										<input type="hidden" id="record2_24" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_25" value="">
+										<input type="hidden" id="syuryotime2_25" value="">
+
+
+										<input type="hidden" id="taiyokbn2_25" value="2">
+										<input type="hidden" id="kubuncdnm2_25" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_25" value="">
+										<input type="hidden" id="fhantekomasu2_25" value="0">
+
+
+
+
+										<input type="hidden" id="record2_25" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_26" value="">
+										<input type="hidden" id="syuryotime2_26" value="">
+
+
+										<input type="hidden" id="taiyokbn2_26" value="2">
+										<input type="hidden" id="kubuncdnm2_26" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_26" value="">
+										<input type="hidden" id="fhantekomasu2_26" value="0">
+
+
+
+
+										<input type="hidden" id="record2_26" value="0">
+
+
+
+
+
+
+
+
+										<input type="hidden" id="kaisitime2_27" value="">
+										<input type="hidden" id="syuryotime2_27" value="">
+
+
+										<input type="hidden" id="taiyokbn2_27" value="2">
+										<input type="hidden" id="kubuncdnm2_27" value="0">
+
+
+
+										<input type="hidden" id="fhantekoma2_27" value="">
+										<input type="hidden" id="fhantekomasu2_27" value="0">
+
+
+
+
+										<input type="hidden" id="record2_27" value="0">
+
+
+
+
+
+
+
+
+
+
+										<input type="hidden" id="record2_28" value="0">
+
+
+
+
+									</tr>
+								</tbody>
+
+							</table>
+						</div><!-- timetable -->
+
+						<form name="HIDUKEform" action="/stagia/reserve/gml_z_datetime_list#list" target="_parent"
+							method="post">
+							<input type="hidden" name="g_sessionid" value="Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf">
+							<input type="hidden" name="g_index" value="" />
+							<input type="hidden" name="flg_sstkoma" value="0">
+
+							<SELECT multiple size="3" name="kanricd" style="visibility: hidden;height:0px">
+
+								<OPTION value="61">61</OPTION>
+
+								<OPTION value="61">61</OPTION>
+
+								<OPTION value="61">61</OPTION>
+
+							</SELECT>
+
+							<SELECT multiple size="3" name="cssisetucd" style="visibility: hidden;height:0px">
+
+
+								<OPTION value="6101010">6101010</OPTION>
+
+
+								<OPTION value="6101020">6101020</OPTION>
+
+
+								<OPTION value="6104000">6104000</OPTION>
+
+							</SELECT>
+
+							<SELECT multiple size="3" name="g_sisetucd" style="visibility: hidden;height:0px">
+
+								<OPTION value="6101010">6101010</OPTION>
+
+								<OPTION value="6101020">6101020</OPTION>
+
+								<OPTION value="6104000">6104000</OPTION>
+
+							</SELECT>
+
+
+
+
+
+
+
+
+
+
+							<SELECT multiple size="3" name="basyocd" style="visibility: hidden;height:0px">
+
+								<OPTION value="610">610</OPTION>
+
+								<OPTION value="610">610</OPTION>
+
+								<OPTION value="610">610</OPTION>
+
+							</SELECT>
+
+
+
+
+							<SELECT multiple size="3" name="g_stgroup" style="visibility: hidden;height:0px">
+
+								<OPTION value="61"></OPTION>
+
+								<OPTION value="61"></OPTION>
+
+								<OPTION value="61"></OPTION>
+
+							</SELECT>
+
+							<SELECT multiple size="3" name="ymd" style="visibility: hidden;height:0px">
+
+								<OPTION value="20250530">20250530</OPTION>
+
+								<OPTION value="20250530">20250530</OPTION>
+
+								<OPTION value="20250530">20250530</OPTION>
+
+							</SELECT>
+
+							<SELECT multiple size="3" name="g_kaisitime" style="visibility: hidden;height:0px">
+
+								<OPTION value="">0</OPTION>
+
+								<OPTION value="">0</OPTION>
+
+								<OPTION value="">0</OPTION>
+
+							</SELECT>
+
+							<SELECT multiple size="3" name="g_syurtime" style="visibility: hidden;height:0px">
+
+								<OPTION value="">0</OPTION>
+
+								<OPTION value="">0</OPTION>
+
+								<OPTION value="">0</OPTION>
+
+							</SELECT>
+
+							<SELECT multiple size="3" name="kaisikoma" style="visibility: hidden;height:0px">
+
+								<OPTION value="0">0</OPTION>
+
+								<OPTION value="0">0</OPTION>
+
+								<OPTION value="0">0</OPTION>
+
+							</SELECT>
+
+							<SELECT multiple size="3" name="syurkoma" style="visibility: hidden;height:0px">
+
+								<OPTION value="0">0</OPTION>
+
+								<OPTION value="0">0</OPTION>
+
+								<OPTION value="0">0</OPTION>
+
+							</SELECT>
+
+							<SELECT multiple size="3" name="g_renzkkoma" style="visibility: hidden;height:0px">
+
+
+								<OPTION value="1">1</OPTION>
+
+
+								<OPTION value="1">1</OPTION>
+
+
+								<OPTION value="1">1</OPTION>
+
+							</SELECT>
+							<input type="hidden" name="u_genzai_idx" value="7">
+							<input type="hidden" name="g_kinonaiyo" value="17">
+
+
+
+
+
+
+							<input type="hidden" name="yoyakuinfo" value="">
+
+
+
+
+							<input type="hidden" value="" name="showStartKoma" />
+							<input type="hidden" value="" name="showEndKoma" />
+
+
+							<input type="hidden" name="errorg_code" value="0">
+
+						</form>
+
+
+
+
+
+
+
+
+
+						<form name="fmDate" action="/stagia/reserve/gml_z_datetime_search#list" method="post" alt="">
+							<input type="hidden" name="g_sessionid" value="Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf">
+							<input type="hidden" name="ymd" value="">
+
+
+							<input type="hidden" name="selectdate" value="">
+
+
+
+							<dl class="block">
+								<dt>表示開始日選択</dt>
+								<dd>
+									<dl class="select-date">
+										<dt>開始日</dt>
+										<dd>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+											<select id="YYYY" onchange="changeYear()" style="width:70px"></select> 年
+
+
+
+											<select id="MM" onchange="changeDay()" style="width:45px"></select> 月
+											<select id="DD" style="width:45px"></select> 日
+
+
+										</dd>
+										<dt>曜日</dt>
+										<dd>
+											<input type="checkbox" name="chkbox" onClick="clickYobi(0)">日</a>
+											<input type="hidden" name="u_yobi" value="" />
+											<input type="checkbox" name="chkbox" onClick="clickYobi(1)">月</a>
+											<input type="hidden" name="u_yobi" value="" />
+											<input type="checkbox" name="chkbox" onClick="clickYobi(2)">火</a>
+											<input type="hidden" name="u_yobi" value="" />
+											<input type="checkbox" name="chkbox" onClick="clickYobi(3)">水</a>
+											<input type="hidden" name="u_yobi" value="" />
+											<input type="checkbox" name="chkbox" onClick="clickYobi(4)">木</a>
+											<input type="hidden" name="u_yobi" value="" />
+											<input type="checkbox" name="chkbox" onClick="clickYobi(5)">金</a>
+											<input type="hidden" name="u_yobi" value="" />
+											<input type="checkbox" name="chkbox" onClick="clickYobi(6)">土</a>
+											<input type="hidden" name="u_yobi" value="" />
+											<input type="checkbox" name="chkbox" onClick="clickYobi(7)">祝日</a>
+											<input type="hidden" name="u_yobi" value="" />
+										</dd>
+									</dl>
+
+
+
+
+									<p class="single"><a href="javascript: search()"><img
+												src="/stagia/jsp/images_jp/multi_images/btn-search.gif" alt="検索"
+												title="検索"></a></p>
+
+
+								</dd>
+							</dl>
+
+
+						</form>
+
+
+						<p class="single">
+
+
+
+
+
+
+
+
+
+
+							<input type="image" id="btnYyList" style="cursor:pointer"
+								src="/stagia/jsp/images_jp/multi_images/btn-reservation-list.gif" alt="予約リストへ"
+								title="予約リストへ" onclick="okbutton()">
+
+
+
+
+
+						</p>
+
+					</div><!--inner-block -->
+				</div><!-- block -->
+
+
+
+
+				<div class="block" id="yyList" style="display:none;">
+					<a name="list" id="list"></a>
+					<h2><span>予約リスト</span></h2>
+					<div class="inner-block">
+
+						<table class="reservation">
+							<thead>
+								<tr>
+
+
+
+									<th>日付</th>
+									<th></th>
+
+
+
+
+
+
+
+
+									<th>部屋名称</th>
+									<th>
+
+										&nbsp;
+
+									</th>
+									<th>
+
+										&nbsp;
+
+									</th>
+
+
+
+
+
+
+
+									<th>
+
+										&nbsp;
+
+										<br />
+
+										&nbsp;
+
+									</th>
+
+									<th class="last">&nbsp;</th>
+								</tr>
+							</thead>
+							<tbody>
+								<form name="futesise" action="/stagia/reserve/gml_z_attach_list" method="post" alt="">
+									<input type="hidden" name="g_sessionid" value="Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf">
+									<input type="hidden" name="g_index" value="" />
+									<input type="hidden" name="u_genzai_idx" value="7">
+									<input type="hidden" name="g_kinonaiyo" value="17">
+								</form>
+
+								<form name="form_nm" method="post" alt="">
+									<input type="hidden" name="g_sessionid" value="Kd0EL0bTKYAtm8E0s4zgHlL4FPeZ4pAf">
+									<input type="hidden" name="u_genzai_idx" value="7">
+									<input type="hidden" name="g_kinonaiyo" value="17">
+									<input type="hidden" name="g_index" value="" />
+									<input type="hidden" name="j_kyosei_flg" value="1">
+
+									<input type="hidden" name="ryosyuhh" value="1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+									<input type="hidden" name="yoyakuinfo" value="">
+
+
+
+								</form>
+						</table>
+
+
+
+
+					</div><!--inner-block -->
+				</div><!-- block -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<p class="single">
+				</p>
+
+
+
+			</div><!-- contents -->
+		</div><!-- contents-holder -->
+
+		<p id="to-top"><a href="#header">このページのトップへ</a></p>
+		<p id="footer">&nbsp;</p>
+
+	</div><!-- holder -->
+	<script language="javascript" src="c.js"></script>
+
+</body>
+
+</html>
