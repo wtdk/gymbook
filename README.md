@@ -119,15 +119,6 @@ Both scripts include error handling for:
 
 These scripts are for educational purposes only. Please ensure you comply with Taito City's terms of service and booking policies when using these scripts.
 
-## License
-
-[Your chosen license]
-
 ## Contributing
 
 Feel free to submit issues and enhancement requests!
-```
-
-Would you like me to also create a `requirements.txt` file for the project? This would make it easier for others to install the necessary dependencies.
-
-Also, would you like me to add any specific license information or additional sections to the README?
